@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui">
+
+  <h:head>
+    <title>Cadastro Carona</title>
+  </h:head>
+
+  <h:body>
+      <center>
+      <h:form id="CadCarona">
+           <h:panelGrid>
+      <p:panel header="Cadastro de Caronas" >
+          <h:panelGrid columns="5">
+              <p:commandButton value="Home"  action="perfilUsuario.xhtml"/>
+              <p:commandButton value="Perfil" action="MeusDadosPerfil.xhtml"  />
+              <p:commandButton value="Cadastrar Carona"  />
+              <p:commandButton value="Solicitar Carona" action ="SolicitarCarona.xhtml" />
+              <p:commandButton value="Logout"  />
+          </h:panelGrid>
+          
+      </p:panel>
+           </h:panelGrid>
+    
+      </h:form>
+      </center>
+      
+      <h:form>
+      <p:layout style="min-width:400px;min-height:600px;" id="layout">
+          <p:layoutUnit position="west" resizable="true" size="200" minSize="40" maxSize="400">
+              
+              <h:form>
+                   <h:graphicImage value="carona.jpg" width="180" height="150"/>
+                    <br></br>
+                   <p:commandLink value="Alterar Imagen"  />
+                   <br></br>
+                   <p:commandLink value="Meus Amigos"/>
+              </h:form>
+                      
+          </p:layoutUnit>
+          
+          <p:layoutUnit position="center">
+              <h:panelGrid>
+                  <p:panel header="Cadastre a sua carona" >
+                      <h:panelGrid columns="2">
+                          
+                          <p:outputLabel for="saida" value="Partida:" />
+                          <p:inputText id="saida" value="#{controller.carona.localOrigem}"/>
+                         
+                          <p:outputLabel for="destino" value="Destino:" />
+                          <p:inputText id="destino" value="#{controller.carona.localDestino}"/>
+                          
+                          <p:outputLabel for="dataDia" value="Dia:" />
+                          <p:inputText id="dataDia" value="#{controller.carona.dia}" />
+                          
+                          <p:outputLabel for="dataMes" value="Mes:" />
+                          <p:inputText id="dataMes" value="#{controller.carona.mes}"/>
+                          
+                          <p:outputLabel for="dataAno" value="DataAno:" />
+                          <p:inputText id="data" value="#{controller.carona.ano}"/>
+                          
+                          
+                          <p:outputLabel for="hora" value="Hora:" />
+                          <p:inputText id="hora" value="#{controller.carona.hora}" />
+                          
+                          <p:outputLabel for="horaMinuto" value="Minuto:" />
+                          <p:inputText id="horaMinuto" value="#{controller.carona.minuto}" />
+                          
+                          <p:outputLabel for="vagas" value="Vagas:" />
+                          <p:inputText id="vagas" value="#{controller.carona.vagasDisponiveis}"/>
+                          <br></br>
+                          <p:commandButton value="Confirmar"/>
+                                               
+                          
+                      </h:panelGrid>                     
+                  </p:panel>
+              </h:panelGrid>
+          </p:layoutUnit>
+      </p:layout>  
+          
+      </h:form>     
+  </h:body>
+</html>

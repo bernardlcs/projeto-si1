@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui">
+
+  <h:head>
+    <title>Cadastro Carona</title>
+  </h:head>
+
+  <h:body>
+      <center>
+      <h:form>
+           <h:panelGrid>
+      <p:panel header="Seja bem vindo" >
+          <h:panelGrid columns="5">
+              <p:commandButton value="Home"  action="perfilUsuario.xhtml"/>
+              <p:commandButton value="Perfil" action="MeusDadosPerfil.xhtml"  />
+              <p:commandButton value="Cadastrar Carona"  action="CadastroCarona.xhtml"/>
+              <p:commandButton value="Solicitar Carona" action ="SolicitarCarona.xhtml" />
+              <p:commandButton value="Logout"  />
+          </h:panelGrid>
+          
+      </p:panel>
+           </h:panelGrid>
+    
+      </h:form>
+      </center>
+      
+      
+      
+      
+      <h:form>
+      <p:layout style="min-width:400px;min-height:600px;" id="layout">
+          <p:layoutUnit position="west" resizable="true" size="200" minSize="40" maxSize="400">
+              
+              <h:form>
+                   <h:graphicImage value="carona.jpg" width="180" height="150"/>
+                    <br></br>
+                   <p:commandLink value="Alterar Imagen"  />
+                   <br></br>
+                   <p:commandLink value="Meus Amigos"/>
+              </h:form>
+                      
+          </p:layoutUnit>
+          
+          <p:layoutUnit position="center">
+              <h:panelGrid>
+                 
+                  <p:panel header="CadastroCarona">
+          <h:panelGrid columns="2">
+                   <p:outputLabel for="origem" value="Local de origem:" />
+                   <p:inputText id="origem" value="#{controller.carona.localOrigem}"/>
+                  
+ 
+                    <p:outputLabel for="destino" value="Local de destino:" />
+                    <p:inputText id="destino" />
+                   
+ 
+                    <p:outputLabel for="dataDia" value="Dia:" />
+                    <p:inputText id="dataDia"  />
+                    
+                    
+                    <p:outputLabel for="dataMes" value="Mes:" />
+                    <p:inputText id="dataMes" />
+                    
+                    
+                    <p:outputLabel for="dataAno" value="Ano:" />
+                    <p:inputText id="dataAno"  />
+                    
+                    
+ 
+                    <p:outputLabel for="saidaHora" value="Hora da Saida:"  />
+                    <p:inputText id="saidaHora"/>
+                    
+                    
+                    <p:outputLabel for="saidaMinuto" value="Minutos:"  />
+                    <p:inputText id="saidaMinuto"  />
+                    
+                    
+ 
+                    <p:outputLabel for="vagas" value="Quantidade de vagas:" />
+                    <p:inputText id="vagas" />
+                    
+                           
+                     
+                    <p:commandButton value="ok"  /> 
+                    
+                    
+              
+          </h:panelGrid>
+          
+      </p:panel>
+                  
+              </h:panelGrid>
+          </p:layoutUnit>
+      </p:layout>  
+          
+      </h:form>    
+     
+  </h:body>
+      
+ 
+</html>

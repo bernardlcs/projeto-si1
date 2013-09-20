@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui">
+
+  <h:head>
+    <title>Solicitar Carona</title>
+  </h:head>
+
+  <h:body>
+      <center>
+      <h:form>
+           <h:panelGrid>
+      <p:panel header="Seja bem vindo" >
+          <h:panelGrid columns="5">
+              <p:commandButton value="Home"  action="perfilUsuario.xhtml"/>
+              <p:commandButton value="Perfil" action="MeusDadosPerfil.xhtml"  />
+              <p:commandButton value="Cadastrar Carona"  action="CadastroCarona.xhtml"/>
+              <p:commandButton value="Solicitar Carona" action ="SolicitarCarona.xhtml" />
+              <p:commandButton value="Logout"  />
+          </h:panelGrid>
+          
+      </p:panel>
+           </h:panelGrid>
+           
+       <p:dialog header="Pesquisa de Caronas" widgetVar="dialogGerBusca"  resizable="false" modal="true" showEffect="slide" width="500">
+            <h:form prependId="false">
+                <p:messages autoUpdate="true"/>
+                <h:panelGrid id="infosLivro" columns="2" style="margin-bottom:10px">
+ 
+                    <h:outputLabel for="caroneiro" value="Caroneiro:" />
+                    <h:inputText id="caroneiro"  />
+ 
+                    <h:outputLabel for="destinoEnc" value="Senha:" />
+                    <h:inputText id="destinoEnc"  />
+                    
+                    <p:commandButton value="Solicitar" />
+                   
+ 
+                    
+                    
+                </h:panelGrid>
+            </h:form>
+        </p:dialog>
+    
+      </h:form>
+      </center>
+      
+      
+      
+      
+      <h:form>
+      <p:layout style="min-width:400px;min-height:600px;" id="layout">
+          <p:layoutUnit position="west" resizable="true" size="200" minSize="40" maxSize="400">
+              
+              <h:form>
+                   <h:graphicImage value="carona.jpg" width="180" height="150"/>
+                    <br></br>
+                   <p:commandLink value="Alterar Imagen"  />
+                   <br></br>
+                   <p:commandLink value="Meus Amigos"/>
+              </h:form>
+                      
+          </p:layoutUnit>
+          
+          <p:layoutUnit position="center">
+              <h:panelGrid>
+                 
+                  <p:panel header="Pesquisar Caronas">
+          <h:panelGrid columns="2">
+                   <p:outputLabel for="origemS" value="Local de origem:" />
+                   <p:inputText id="origemS" />
+                  
+ 
+                    <p:outputLabel for="destinoS" value="Local de destino:" />
+                    <p:inputText id="destinoS" />
+                   
+ 
+                    <p:outputLabel for="dataDiaS" value="Dia:" />
+                    <p:inputText id="dataDiaS"  />
+                    
+                    
+                    <p:outputLabel for="dataMesS" value="Mes:" />
+                    <p:inputText id="dataMesS" />
+                    
+                    
+                    <p:outputLabel for="dataAnoS" value="Ano:" />
+                    <p:inputText id="dataAnoS"  />
+                    
+                    
+ 
+                    <p:outputLabel for="saidaHoraS" value="Hora da Saida:"  />
+                    <p:inputText id="saidaHoraS"/>
+                    
+                    
+                    <p:outputLabel for="saidaMinutoS" value="Minutos:"  />
+                    <p:inputText id="saidaMinutoS"  />
+                    
+                    <h:form prependId="false">
+                    <p:commandButton value="Buscar"  oncomplete="dialogGerBusca.show()" />
+                    </h:form> 
+                    
+                    
+              
+          </h:panelGrid>
+          
+      </p:panel>
+                  
+              </h:panelGrid>
+          </p:layoutUnit>
+      </p:layout>
+       
+          
+      </h:form>    
+     
+  </h:body>
+      
+ 
+</html>

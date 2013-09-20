@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:p="http://primefaces.org/ui">
+
+  <h:head>
+    <title>Dados do perfil</title>
+  </h:head>
+
+  <h:body>
+      <center>
+      <h:form id="dados">
+           <h:panelGrid>
+      <p:panel header="Cadastro de Caronas" >
+          <h:panelGrid columns="5">
+              <p:commandButton value="Home" action="perfilUsuario.xhtml" />
+              <p:commandButton value="Perfil"  action="MeusDadosPerfil.xhtml" />
+              <p:commandButton value="Cadastrar Carona" action="CadastroCarona.xhtml" />
+              <p:commandButton value="Solicitar Carona" action ="SolicitarCarona.xhtml" />
+              <p:commandButton value="Logout"  />
+          </h:panelGrid>
+          
+      </p:panel>
+           </h:panelGrid>
+    
+      </h:form>
+      </center>
+      
+      <h:form>
+      <p:layout style="min-width:400px;min-height:600px;" id="layout">
+          <p:layoutUnit position="west" resizable="true" size="200" minSize="40" maxSize="400">
+              
+              <h:form>
+                   <h:graphicImage value="carona.jpg" width="180" height="150"/>
+                    <br></br>
+                   <p:commandLink value="Alterar Imagen"  />
+                   <br></br>
+                   <p:commandLink value="Meus Amigos"/>
+              </h:form>
+                      
+          </p:layoutUnit>
+          
+          <p:layoutUnit position="center">
+              <h:panelGrid>
+                 
+                  <p:panel header="Perfil" >
+                      <h:panelGrid columns="2">
+                          
+                          <p:outputLabel for="meuNome" value="Nome:" />
+                          <p:inputText id="meuNome" />
+                          
+                          <p:outputLabel for="pontos" value="Pontos:" />
+                          <p:inputText id="pontos" />
+                          <br></br>
+                          
+                          <p:commandButton value="Editar Dados"/>
+                                               
+                          
+                      </h:panelGrid>                     
+                  </p:panel>
+              </h:panelGrid>
+          </p:layoutUnit>
+      </p:layout>  
+          
+      </h:form>    
+     
+  </h:body>
+</html>
